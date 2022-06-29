@@ -2,17 +2,17 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JTextField;
 import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.Clipboard;
 import java.awt.Toolkit;
 public class AICTYT {
 
 	private JFrame frame;
-	private JTextField textField;
+	private JTextArea textField;
 
 	/**
 	 * Launch the application.
@@ -42,12 +42,13 @@ public class AICTYT {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 450, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setResizable(false);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblName = new JLabel("Add your text");
-		lblName.setBounds(93, 67, 100, 14);
+		lblName.setBounds(25, 30, 100, 14);
 		frame.getContentPane().add(lblName);
 		
 		JButton btnSubmit = new JButton("Ok");
@@ -67,11 +68,13 @@ public class AICTYT {
 				}
 			}
 		});
-		btnSubmit.setBounds(93, 121, 89, 23);
+		btnSubmit.setBounds(195, 500, 60, 30);
 		frame.getContentPane().add(btnSubmit);
 		
-		textField = new JTextField();
-		textField.setBounds(204, 64, 167, 20);
+		textField = new JTextArea();
+		textField.setBounds(25, 60, 400, 400);
+		textField.setWrapStyleWord(true);
+		textField.setLineWrap(true);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 	}
